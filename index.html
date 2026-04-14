@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Livet i Bygda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🎮 STARTSKJERM -->
+<div id="startScreen">
+  <h1 class="logo">🎲 Livet i Bygda</h1>
+
+  <input id="name" placeholder="Skriv navn...">
+
+  <div class="menuButtons">
+    <button onclick="createRoom()">🎮 Lag spill</button>
+
+    <input id="roomCode" placeholder="Kode">
+    <button onclick="joinRoom()">🚪 Bli med</button>
+  </div>
+</div>
+
+<!-- 🏠 LOBBY -->
+<div id="lobby" style="display:none;">
+  <h2>🏠 Lobby</h2>
+  <div id="players"></div>
+
+  <button onclick="startGame()">🚀 Start spill</button>
+</div>
+
+<!-- 🎮 GAME -->
+<div id="game" style="display:none;">
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="turnInfo">⏳ Vent...</div>
+    <button onclick="rollDice()">🎲 Kast</button>
+  </div>
+
+  <!-- SPILLBRETT -->
+  <div id="boardWrapper">
+    <div id="board"></div>
+  </div>
+
+  <!-- SPILLER PANEL -->
+  <div id="playerPanel"></div>
+
+</div>
+
+<!-- 💬 CHAT -->
+<div id="chatBox">
+  <div id="messages"></div>
+  <input id="chatInput" placeholder="Skriv melding...">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<!-- 🔊 LYD -->
+<audio id="clickSound" src="https://cdn.pixabay.com/audio/2022/03/10/audio.mp3"></audio>
+
+<!-- 🔥 FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- 📜 DINE FILER -->
+<script src="firebase.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
